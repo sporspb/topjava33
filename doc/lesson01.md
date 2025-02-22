@@ -7,7 +7,7 @@
   - **При первом Apply удобнее выбрать имя локального ченджлиста Name: Change**. Далее все остальные патчи также будут в него попадать.
 - **Код проекта обновляется и не всегда совпадает с видео (можно увидеть как развивался проект). Изменения в проекте указываю после соответствующего патча.** 
 - Если ссылка не открывается, попробуй [включить VPN](https://github.com/JavaOPs/topjava/wiki/VPN)
-- **ОСНОВНОЕ, чему мы учимся на проекте: мыслить и работать как Java разработчики уже сейчас**, потом это будет гораздо сложнее и стоить дороже. Вот на мой взгляд [хорошие советы новичкам](https://blog.csssr.com/ru/article/how-to-be-a-beginner-developer). От себя я добавлю:
+- **ОСНОВНОЕ, чему мы учимся на проекте: мыслить и работать как Java разработчики уже сейчас**, потом это будет гораздо сложнее и стоить дороже. Вот на мой взгляд [хорошие советы новичкам](http://blog.csssr.ru/2016/09/19/how-to-be-a-beginner-developer). От себя я добавлю:
   - Учись **грамотно формулировать проблему**. Проблема "у меня не работает" может иметь тысячи причин. В процессе формулирования очень часто приходит ее решение.
     - что я делаю (подробно, чтобы понял человек, который не был занят этой проблемой несколько часов)
     - что получаю (обычно верх самого последнего эксепшена)
@@ -29,10 +29,10 @@
 ### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Рефакторинг проекта
 
 #### Apply 1_0_fix_rename.patch
-- поправил [путь к демо](https://javaops-demo.ru/topjava)
 - переименовал классы `UserMeal*` в более красивые `Meal*`
-- преименовал `MealWithExceed` transfer object класс ([что это такое](https://ru.wikipedia.org/wiki/DTO) пройдем позже)  в `MealTo` ([data transfer object naming convention](https://stackoverflow.com/questions/1724774/java-data-transfer-object-naming-convention))
+- переименовал `MealWithExceed` transfer object класс ([что это такое](https://ru.wikipedia.org/wiki/DTO) пройдем позже)  в `MealTo` ([data transfer object naming convention](https://stackoverflow.com/questions/1724774/java-data-transfer-object-naming-convention))
 - обновил зависимость `maven-compiler-plugin`
+- IDEA предложила рефакторинг `TimeUtil.isBetweenHalfOpen` с использованием `isBefore`.
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW0:
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/file/d/1hXU8VUKVxrayyQ6Xu7f3OGZWCSdK9Pyi">Optional: реализация getFilteredMealsWithExcess через Stream API</a>
@@ -160,7 +160,7 @@
 
 ### Optional
 #### 2. Реализуем в ПАМЯТИ (любая коллекция) CRUD (create/read/update/delete) для еды
-**Пример: [Simple CRUD using Servlet/JSP](https://telegra.ph/Simple-CRUD-Using-Jsp-Servlet-10-08)**
+**Пример: [Simple CRUD using Servlet/JSP](https://web.archive.org/web/20230529120950/https://danielniko.dev/2012/04/17/simple-crud-using-jsp-servlet-and-mysql/)**
 > - Пример нужно САМОСТОЯТЕЛЬНО переделать: вместо хранения в MySql нужно хранить в коллекции ПАМЯТИ (задание упрощается).
 > - Классы: сервлет, **интерфейс хранения**, его реализация для хранения в памяти
 - 2.1 Хранение в памяти будет одна из наших CRUD реализаций (позже будет JDBC, JPA и DATA-JPA).

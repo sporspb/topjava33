@@ -2,10 +2,6 @@
 
 ## [Материалы занятия](https://drive.google.com/drive/folders/0B9Ye2auQ_NsFfkpsWE1uX19zV19IVHd0bTlDclc5QmhMMm4xa0Npek9DT18tdkwyLTBZdXM) (скачать все патчи можно через Download папки patch)
 
-## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки проекта:
-#### Apply 2_0_fix_TimeUtil.patch
-IDEA предложила рефакторинг `TimeUtil.isBetweenHalfOpen` с использованием `isBefore`. 
-
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW1:
 
 - **Перед сборкой проекта (или запуском Tomcat) откройте вкладку Maven Projects и сделайте `clean`**
@@ -14,7 +10,7 @@ IDEA предложила рефакторинг `TimeUtil.isBetweenHalfOpen` с
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFXzByNVF3VV9zM1k">Отображения списка еды в JSP</a>
 #### Apply 2_1_HW1.patch
 
-> - Переименовал `TimeUtil` в `DateTimeUtil`. У нас потерялась прака `isBefore` предыдущего патча, не стал исправлять: на 3-м занятии будет рефакторинг, чтобы в этом методе одновременно обрабатывались `LocalTime` и `LocalDateTime` и уже не получиться использовать `isBefore`.
+> - Переименовал `TimeUtil` в `DateTimeUtil`
 > - Переименовал `mealList.jsp` в `meals.jsp`
 > - Изменения в `MealsUtil`:
 >    - Сделал константу `List<Meal> meals`. [Правило именования констант, которые не "deeply immutable"](https://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names)
@@ -31,6 +27,7 @@ IDEA предложила рефакторинг `TimeUtil.isBetweenHalfOpen` с
 Про использование паттерна Repository будет подробно рассказано в видео "Слои приложения"
 > - Согласно ответам на [Java Interfaces/Implementation naming convention](https://stackoverflow.com/questions/2814805/java-interfaces-implementation-naming-convention) 
 убрал `Impl` в `InMemory` (и всех последующих) реализациях репозиториев. Они не нужны.
+> - Переименовал `InMemoryMealRepository.repository` в `mealsMap`
 > - Поправил `InMemoryMealRepository.save()`. Если обновляется еда, которой нет в хранилище (c несуществующим id), вставка не происходит.
 > - В `MealServlet.doGet()` сделал выбор через `switch`
 > - В местах, где требуется `int`, заменил `Integer.valueOf()` на `Integer.parseInt()`
@@ -105,7 +102,7 @@ IDEA предложила рефакторинг `TimeUtil.isBetweenHalfOpen` с
 
 > Зачем мы наследуем `NotFoundException` от `RuntimeException`?
 
-Так с ним удобнее работать. И у нас нет никаких действий по восстановлению состояния приложения (no recoverable conditions): <a href="http://stackoverflow.com/questions/6115896/java-checked-vs-unchecked-exception-explanation">checked vs unchecked exception</a>. По последним данным checked exception вообще depricated: <a href="https://www.javacodegeeks.com/2016/06/ignore-checked-exceptions-cool-devs-based-600000-java-projects.html">Ignore Checked Exceptions</a>
+Так с ним удобнее работать. И у нас нет никаких действий по восстановлению состояния приложения (no recoverable conditions): <a href="http://stackoverflow.com/questions/6115896/java-checked-vs-unchecked-exception-explanation">checked vs unchecked exception</a>. По последним данным checked exception вообще depricated: <a href="http://blog.takipi.com/ignore-checked-exceptions-all-the-cool-devs-are-doing-it-based-on-600000-java-projects">Ignore Checked Exceptions</a>
 
 > Что такое `ProfileRestController`?
 
