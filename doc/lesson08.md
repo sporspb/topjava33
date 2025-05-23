@@ -4,7 +4,11 @@
 
 - **Браузер кэширует javascript и css. Если изменения не работают, обновите приложение в браузере (в хроме `Ctrl+F5`)**
 - **При удалении файлов не забывайте делать clean: `mvn clean`**
- 
+
+## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки проекта:
+#### Apply 8_0_unused_import.patch
+Удаляем неиспользуемый `import` (`Ctrl+Alt+O`).
+
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW7
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. [HW7](https://drive.google.com/file/d/1h6wg2V9yZoNX7fA7mNA7w7Kxp8IACsIJ)
@@ -501,7 +505,7 @@ https://bs-uploads.toptal.io/blackfish-uploads/uploaded_file/file/412345/image-1
 
 > Вместе с добавлением последнего Spring Security обновил версии Spring и Spring Data JPA, не забудьте сделать `mvn clean` и кнопку *Reload All Maven Projects*    
 > Недавно вышла новая версия Spring 6.0, Spring Data JPA 3.0. Они все используют пакет _jakarta_ и включены в недавний релиз Spring Boot 3. 
-> В конце курса мы мигрируем наше приложение на последний Spring Boot 3.2.x   
+> В конце курса мы мигрируем наше приложение на последний Spring Boot 3.4.x   
 
 - <a href="http://projects.spring.io/spring-security/">Spring Security</a>
 - <a href="https://ru.wikipedia.org/wiki/Протокол_AAA">Протокол AAA</a>

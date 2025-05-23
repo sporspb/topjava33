@@ -38,9 +38,8 @@
    - [Call to id getter initializes proxy when using AccessType( "field" ): HHH-3718](https://hibernate.atlassian.net/browse/HHH-3718)
    - [According to JPA, a Proxy should be loaded even when accessing the identifier: HHH-12034](https://hibernate.atlassian.net/browse/HHH-12034)
  - <a href="http://stackoverflow.com/questions/594597/hibernate-annotations-which-is-better-field-or-property-access">Which is better, field or property access?</a>
- - Поправил `equals()/hashCode()` с учетом НОВОЙ РЕДАКЦИИ рекомендаций
-   - <a href="https://jpa-buddy.com/blog/hopefully-the-final-article-about-equals-and-hashcode-for-jpa-entities-with-db-generated-ids/">(Hopefully) the final article about equals and hashCode for JPA entities with DB-generated IDs</a>  
-     Реализация `hashCode` такая неэффективная для случая, когда в hash-коллекцию добавляется новый объект с id=NULL, который после сохранения меняется на сгенерированный БД  
+ - Поправил [JPA equals_hashcode](https://stackoverflow.com/a/78077907/548473) с учетом НОВОЙ РЕДАКЦИИ рекомендаций и для исключения `LazyInitializationException` в прокси-сущностях вне транзакции
+   - Реализация `hashCode` возвращает константу для всех инстансов класса для случая, когда в hash-коллекцию добавляется новый объект с id=NULL, который после сохранения меняется на сгенерированный БД  
      ("Once the id is generated (on its first save) the hashCode gets changed. So the HashSet looks for the entity in a different bucket and cannot find it.
      It wouldn’t be an issue if the id was set during the entity object creation (e.g. was a UUID set by the app), but DB-generated ids are more common.")
    - <a href="https://xebia.com/advanced-hibernate-proxy-pitfalls">Hibernate Proxy Pitfalls</a>
@@ -53,8 +52,6 @@
 > [Implementing equals() and hashCode()](https://docs.jboss.org/hibernate/stable/core.old/reference/en/html/persistent-classes-equalshashcode.html)
 
 > Оптимально использовать уникальные бизнес-поля, но обычно таких нет, и чаще всего используются PK с ограничением, что он может быть `null` у новых объектов, и нельзя объекты сравнивать через `equals() and hashCode()` в бизнес-логике (например, тестах).
-
-> [equals() and hashcode() when using JPA and Hibernate](https://stackoverflow.com/questions/1638723)
 
 ------------------------
 

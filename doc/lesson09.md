@@ -237,6 +237,10 @@ JSON.
 > - можно поставить [Locale Switcher](https://chrome.google.com/webstore/detail/locale-switcher/kngfjpghaokedippaapkfihdlmmlafcc) хром плагин
 
 - <a href="http://stackoverflow.com/a/6242840/548473">JavaScript internationalization</a>
+> В JS внедрили [Java Script String interpolation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#string_interpolation).
+> Все JS строковые выражение с переменными перевел в этот формат   
+> Обратите внимание на кавычки для интерполяции: ` (на клавиатуре обычно справа вверху, вместе с ~)  
+> PS: В последних версиях [JDK String Templates](https://habr.com/ru/companies/spring_aio/articles/825876/) пока присутствует как preview feature, ждем когда эта удобная фича появится в релизе
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7.  <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFUmhUTms1WnhTeHc">Форма логина / логаут.</a>
 
